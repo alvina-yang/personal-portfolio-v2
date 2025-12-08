@@ -57,11 +57,11 @@ export default function Home() {
           </p>
 
           <p>
-            I deleted my old website because I became a little too obsessed with layouts and animations. I kept redesigning it instead of saying anything meaningful. This version is my attempt to do the opposite: focus less on how it looks, and more on what I actually do and care about. If you do want to see my old website you can check it out <a href="https://v1.alvinayang.com" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">here</a>.
+            I deleted my previous website after realizing I was disproportionately focused on layouts and animations rather than substance. I kept iterating on the interface instead of articulating anything meaningful. This version is a small course correction that prioritizes what I build and think about over how the page looks.
           </p>
 
           <p>
-            If anything is interesting to you feel free to reach out through my linkedin or email.
+          If any of this piques your curiosity, feel free to reach out via LinkedIn or email; I am always open to conversation.
           </p>
         </div>
         </div>
