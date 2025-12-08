@@ -16,16 +16,18 @@ const VisualizationWrapper = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+// 🔑 Make the whole container ignore all pointer / touch input
 const CanvasContainer = React.forwardRef<HTMLDivElement>((props, ref) => (
   <div
     ref={ref}
     className="relative w-full aspect-square rounded-lg overflow-hidden border border-[#e5e3e0] dark:border-[#2a2a2a]"
     style={{
+      pointerEvents: "none",          // <- key line
       userSelect: "none",
       WebkitUserSelect: "none",
       WebkitTapHighlightColor: "transparent",
       WebkitTouchCallout: "none",
-      touchAction: "pan-y",
+      touchAction: "auto",
     }}
   />
 ));
@@ -42,7 +44,6 @@ export default function KissingNumber() {
   const p5Instance3DRef = useRef<p5 | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // 👇 use your custom theme provider
   const { theme } = useTheme();
   const isDarkRef = useRef(theme === "dark");
 
@@ -56,7 +57,12 @@ export default function KissingNumber() {
         const rect = canvas2DRef.current.getBoundingClientRect();
         const size = Math.floor(rect.width);
         if (size > 0) {
-          setDimensions({ width: size, height: size });
+          setDimensions((prev) => {
+            if (prev.width !== size) {
+              return { width: size, height: size };
+            }
+            return prev;
+          });
         }
       }
     };
@@ -74,15 +80,15 @@ export default function KissingNumber() {
     import("p5").then((p5Module) => {
       const P5 = p5Module.default;
 
-      // Shared theme-ish greys (match globals.css as closely as possible)
-      const BG_LIGHT = [250, 249, 246]; // ≈ #faf9f6 (250, 249, 246)
-      const BG_DARK = 15;   // ≈ #0f0f0f
-      const STROKE_LIGHT = 26;  // ≈ #1a1a1a
-      const STROKE_DARK = 245;  // ≈ #faf9f6
+      const BG_LIGHT = [250, 249, 246];
+      const BG_DARK = 15;
+      const STROKE_LIGHT = 26;
+      const STROKE_DARK = 245;
 
       // 2D Kissing Number Visualization
       if (canvas2DRef.current && !p5Instance2DRef.current) {
-        const sketch2D = (p5: p5) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const sketch2D = (p5: any) => {
           const W = dimensions.width;
           const H = dimensions.height;
           const centerRadius = 40;
@@ -93,8 +99,15 @@ export default function KissingNumber() {
             if (!canvas2DRef.current) return;
             const cnv = p5.createCanvas(W, H);
             cnv.parent(canvas2DRef.current);
+
+            const canvasEl = cnv.elt as HTMLCanvasElement;
+            canvasEl.style.touchAction = "auto";
+            canvasEl.style.pointerEvents = "none"; // extra safety
+
             p5.frameRate(30);
           };
+
+          // no touch / mouse handlers at all
 
           p5.draw = () => {
             const currentIsDark = isDarkRef.current;
@@ -136,7 +149,8 @@ export default function KissingNumber() {
 
       // 3D Kissing Number Visualization
       if (canvas3DRef.current && !p5Instance3DRef.current) {
-        const sketch3D = (p5: p5) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const sketch3D = (p5: any) => {
           const W = dimensions.width;
           const H = dimensions.height;
           const centerRadius = 35;
@@ -144,7 +158,6 @@ export default function KissingNumber() {
           let angleX = 0;
           let angleY = 0;
 
-          // Icosahedron-like vertex positions (12 surrounding spheres)
           const phi = (1 + Math.sqrt(5)) / 2;
           const vertices = [
             [0, 1, phi],
@@ -163,17 +176,22 @@ export default function KissingNumber() {
 
           const normalized = vertices.map((v) => {
             const len = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
-            return v.map(
-              (c) => (c / len) * (centerRadius + surroundRadius)
-            );
+            return v.map((c) => (c / len) * (centerRadius + surroundRadius));
           });
 
           p5.setup = () => {
             if (!canvas3DRef.current) return;
             const cnv = p5.createCanvas(W, H, p5.WEBGL);
             cnv.parent(canvas3DRef.current);
+
+            const canvasEl = cnv.elt as HTMLCanvasElement;
+            canvasEl.style.touchAction = "auto";
+            canvasEl.style.pointerEvents = "none"; // extra safety
+
             p5.frameRate(30);
           };
+
+          // no touch / mouse handlers at all
 
           p5.draw = () => {
             const currentIsDark = isDarkRef.current;
@@ -186,7 +204,6 @@ export default function KissingNumber() {
             p5.rotateX(angleX);
             p5.rotateY(angleY);
 
-            // Neutral white lights (no color cast)
             if (currentIsDark) {
               p5.ambientLight(90);
               p5.directionalLight(230, 230, 230, 0.5, 0.5, -1);
@@ -205,7 +222,7 @@ export default function KissingNumber() {
             p5.sphere(centerRadius);
             p5.pop();
 
-            // Surrounding spheres (still monochrome)
+            // Surrounding spheres
             normalized.forEach((pos) => {
               p5.push();
               p5.translate(pos[0], pos[1], pos[2]);
@@ -239,7 +256,7 @@ export default function KissingNumber() {
         p5Instance3DRef.current = null;
       }
     };
-  }, [dimensions, theme]); // theme in deps so new instances still pick size/theme if remounted
+  }, [dimensions]);
 
   return (
     <KissingContainer>
@@ -255,3 +272,4 @@ export default function KissingNumber() {
     </KissingContainer>
   );
 }
+ 
