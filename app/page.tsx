@@ -57,7 +57,7 @@ export default function Home() {
           </p>
 
           <p>
-            I deleted my previous website after realizing I was disproportionately focused on layouts and animations rather than substance. I kept iterating on the interface instead of articulating anything meaningful. This version is a small course correction that prioritizes what I build and think about over how the page looks.
+            I replaced my previous website after realizing I was disproportionately focused on layouts and animations rather than substance. I kept iterating on the interface instead of articulating anything meaningful. This version is a small course correction that prioritizes what I build and think about over how the page looks. If you are curious, the previous version remains accessible <a href="https://v1.alvinayang.com" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">here</a>.
           </p>
 
           <p>
