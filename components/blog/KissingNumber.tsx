@@ -25,6 +25,7 @@ const CanvasContainer = React.forwardRef<HTMLDivElement>((props, ref) => (
       WebkitUserSelect: "none",
       WebkitTapHighlightColor: "transparent",
       WebkitTouchCallout: "none",
+      touchAction: "pan-y",
     }}
   />
 ));
