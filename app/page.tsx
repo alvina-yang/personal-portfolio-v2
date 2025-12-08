@@ -1,65 +1,71 @@
 import Image from "next/image";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen">
+      <Navbar />
+
+      <div className="px-8 py-16 md:px-16 lg:px-24">
+        <div className="max-w-3xl mx-auto">
+        {/* Photo and Header */}
+        <div className="mb-12 flex flex-col md:flex-row items-center gap-8">
+          <Image
+            src="/photo4.jpg"
+            alt="Alvina Yang"
+            width={200}
+            height={200}
+            className="rounded-full"
+            priority
+          />
+          <h1 className="text-3xl md:text-4xl leading-tight">
+            Hey! I&apos;m Alvina and I can (sometimes) code.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        </div>
+
+        {/* Content paragraphs */}
+        <div className="space-y-6 text-base leading-relaxed">
+          <p>
+            I&apos;m a student at the University of Toronto studying <strong>Computer Science</strong> (specialist) and <strong>Mathematics</strong> (major).
+          </p>
+
+          <p>
+            This summer, I&apos;ll be joining <strong>Rippling</strong> as a Software Engineer intern on the Employee Experience team. In the past, I have interned at <strong>Blackberry QNX</strong> on the IDE/Graphics team, <strong>Seismic</strong> on the AI/ML team, and <strong>Amazon</strong> on the Supply Chain Optimization Technologies team. I have also done research in HCI (human-computer interaction) at the <strong>IAI Lab</strong>, and in causal reasoning in LLMs at the <strong>Vector Institute</strong>.
+          </p>
+
+          <p>
+            My interests tend to jump around a bit but they usually circle the same themes:
+          </p>
+
+          <ul className="list-disc list-inside space-y-2 ml-4">
+            <li>Abstract mathematics</li>
+            <li>Distributed systems</li>
+            <li>Natural language processing</li>
+            <li>Applied AI</li>
+          </ul>
+
+          <p>
+            Outside of code I also read a lot. Some of my favourite books are <em>Kafka on the Shore</em> (Haruki Murakami), <em>The Secret History</em> (Donna Tartt), <em>Piranesi</em> (Susanna Clarke), and <em>Almond</em> (Won-pyung Sohn).
+          </p>
+
+          <p>
+            I also love building mildly unhinged projects for fun. A few recent ones include <a href="https://devpost.com/software/orbit-59jths" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">Orbit</a> (an &ldquo;auto-doxxer&rdquo; that uses facial recognition to pull publicly available information and somehow a Hack the North winning project), a <a href="https://devpost.com/software/i-cheated-lol" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">hackathon-cheating assistant</a>  (basically rewrites your commits and files), and <a href="https://devpost.com/software/irrizzistable-glasses" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">Rizz Glasses</a> (an AI pair of glasses that does facial recognition and gives you conversation prompts in real time). Pls pls pls don&apos;t ban me MLH.
+          </p>
+
+          <p>
+            By the way, I actually build normal projects as well like a <a href="https://dorahacks.io/buidl/21648" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">live pitch simulator</a> (UofTHacks 12 winner) and a <a href="https://devpost.com/software/remi-bo5sil" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">reminiscence therapy tool</a> (UofTHacks 11 winner).
+          </p>
+
+          <p>
+            I deleted my old website because I became a little too obsessed with layouts and animations. I kept redesigning it instead of saying anything meaningful. This version is my attempt to do the opposite: focus less on how it looks, and more on what I actually do and care about.
+          </p>
+
+          <p>
+            If anything is interesting to you feel free to reach out through my linkedin or email.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
