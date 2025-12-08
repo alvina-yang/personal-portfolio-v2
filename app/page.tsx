@@ -19,7 +19,7 @@ export default function Home() {
             priority
           />
           <h1 className="text-3xl md:text-4xl leading-tight">
-            Hey! I&apos;m Alvina and I can (sometimes) code.
+            Hi, I&apos;m Alvina and I write code that mostly behaves.
           </h1>
         </div>
 
