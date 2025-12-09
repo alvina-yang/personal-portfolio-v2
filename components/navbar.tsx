@@ -12,7 +12,7 @@ export function Navbar() {
             Home
           </Link>
           <Link href="/blogs" className="text-base hover:opacity-70 transition-opacity">
-            Blog
+            Blogs
           </Link>
           <ThemeToggle />
         </div>

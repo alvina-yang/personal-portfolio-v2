@@ -11,7 +11,7 @@ export default function BlogsPage() {
 
       <div className="px-8 py-16 md:px-16 lg:px-24">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl mb-12">Blog</h1>
+          <h1 className="text-3xl md:text-4xl mb-12">Blogs</h1>
 
           <div className="space-y-6">
             {blogs.map((blog) => (

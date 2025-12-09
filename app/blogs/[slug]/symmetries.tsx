@@ -451,7 +451,7 @@ export default function CrazySymmetries() {
         <p className="mb-2 leading-relaxed">
           Its order (number of elements) is:
         </p>
-        <p>
+        <p className="break-words">
           <span className={highlightCls}>
             808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000
           </span>
