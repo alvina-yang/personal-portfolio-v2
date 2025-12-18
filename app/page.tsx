@@ -11,7 +11,7 @@ export default function Home() {
         {/* Photo and Header */}
         <div className="mb-12 flex flex-col md:flex-row items-center gap-8">
           <Image
-            src="/photo4.jpg"
+            src="/headshot.jpg"
             alt="Alvina Yang"
             width={200}
             height={200}
