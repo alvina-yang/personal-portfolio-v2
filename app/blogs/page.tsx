@@ -9,7 +9,7 @@ export default function BlogsPage() {
     <main className="min-h-screen overflow-x-hidden w-full">
       <Navbar />
 
-      <div className="px-8 py-16 md:px-16 lg:px-24">
+      <div className="px-8 py-16 md:px-16 lg:px-24 pt-24 md:pt-28">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl mb-12">Blogs</h1>
 

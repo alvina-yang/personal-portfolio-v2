@@ -31,7 +31,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <main className="min-h-screen overflow-x-hidden w-full">
       <Navbar />
 
-      <article className="px-8 py-16 md:px-16 lg:px-24 w-full max-w-full">
+      <article className="px-8 py-16 md:px-16 lg:px-24 pt-24 md:pt-28 w-full max-w-full">
         <div className="max-w-3xl mx-auto">
           <header className="mb-12">
             <h1 className="text-3xl md:text-4xl mb-4">{blog.title}</h1>

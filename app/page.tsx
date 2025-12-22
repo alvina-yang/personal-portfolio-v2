@@ -6,7 +6,7 @@ export default function Home() {
     <main className="min-h-screen overflow-x-hidden w-full">
       <Navbar />
 
-      <div className="px-8 py-16 md:px-16 lg:px-24">
+      <div className="px-8 py-16 md:px-16 lg:px-24 pt-24 md:pt-28">
         <div className="max-w-3xl mx-auto">
         {/* Photo and Header */}
         <div className="mb-12 flex flex-col md:flex-row items-center gap-8">

@@ -4,7 +4,7 @@ import { SocialLinks } from "@/components/social-links";
 
 export function Navbar() {
   return (
-    <div className="sticky top-0 z-50 bg-[#faf9f6] dark:bg-[#0f0f0f] border-b border-[#e5e3e0] dark:border-[#2a2a2a] px-4 py-4 md:px-8 lg:px-12 w-full max-w-full">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-[#faf9f6]/95 dark:bg-[#0f0f0f]/95 backdrop-blur-sm border-b border-[#e5e3e0] dark:border-[#2a2a2a] px-4 py-4 md:px-8 lg:px-12 w-full">
       <div className="flex justify-between items-center max-w-full">
         <SocialLinks />
         <div className="flex items-center gap-8">
