@@ -1,9 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useTheme } from "./theme-provider";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <button
@@ -11,7 +17,9 @@ export function ThemeToggle() {
       className="hover:opacity-70 transition-opacity"
       aria-label="Toggle theme"
     >
-      {theme === "light" ? (
+      {!mounted ? (
+        <div className="w-6 h-6" />
+      ) : theme === "light" ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getBlogBySlug, getAllPublishedBlogs } from "@/lib/blogs";
 import { Navbar } from "@/components/navbar";
 import Symmetries from "./symmetries";
+import IrrationalNumber from "./irrational-number";
 
 export async function generateStaticParams() {
   const blogs = getAllPublishedBlogs();
@@ -21,6 +22,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   // Map slug to component
   const BlogContent = {
     "symmetries": Symmetries,
+    "irrational-number": IrrationalNumber,
   }[slug];
 
   if (!BlogContent) {

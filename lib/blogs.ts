@@ -15,6 +15,13 @@ export const blogs: Blog[] = [
     date: '2025-11-17',
     published: true,
   },
+  {
+    slug: 'irrational-number',
+    title: 'The most irrational number in the universe',
+    description: 'How nature solves the packing problem and what that reveals about the golden ratio.',
+    date: '2026-02-12',
+    published: true,
+  },
   // Add more blogs here as you create them
 ];
 
