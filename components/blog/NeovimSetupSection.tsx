@@ -1339,6 +1339,13 @@ export default function NeovimSetupSection() {
 				height={512}
 				className="rounded-md w-full"
 			/>
+
+			<p>
+				You can also check out the full config repository{" "}
+				<a href="https://github.com/alvina-yang/NeoVim" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">here</a>,
+				or just clone it directly into your config directory:
+			</p>
+			<Terminal command="git clone https://github.com/alvina-yang/NeoVim.git ~/.config/nvim" />
 		</div>
 	);
 }
