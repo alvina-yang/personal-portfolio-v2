@@ -9,6 +9,13 @@ export interface Blog {
 
 export const blogs: Blog[] = [
   {
+    slug: 'neovim-isnt-actually-that-scary',
+    title: "Neovim Isn't Actually That Scary",
+    description: 'My terminal setup :DDD',
+    date: '2026-03-06',
+    published: true,
+  },
+  {
     slug: 'symmetries',
     title: 'Symmetries',
     description: 'From snowflakes to the Leech lattice, to kissing numbers, and of course the Monster.',
@@ -22,7 +29,6 @@ export const blogs: Blog[] = [
     date: '2026-02-12',
     published: true,
   },
-  // Add more blogs here as you create them
 ];
 
 // Helper function to get a blog by slug

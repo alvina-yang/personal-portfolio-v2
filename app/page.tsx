@@ -154,7 +154,17 @@ export default function Home() {
 
             <p>
               When I&apos;m not (hypothetically) breaking hackathon bylaws, I
-              build more normal things too, like a{" "}
+              build more normal things too, like a 
+	      {" "}
+              <a
+	        href="https://devpost.com/software/temp-sqyptg"
+	        target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-70 transition-opacity"
+              >
+               multiagent world simulator 
+              </a>{" "}
+              (UofTHacks 13 winner),{" "}
               <a
                 href="https://dorahacks.io/buidl/21648"
                 target="_blank"

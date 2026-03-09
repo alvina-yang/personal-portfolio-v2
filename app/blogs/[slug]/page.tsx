@@ -3,6 +3,7 @@ import { getBlogBySlug, getAllPublishedBlogs } from "@/lib/blogs";
 import { Navbar } from "@/components/navbar";
 import Symmetries from "./symmetries";
 import IrrationalNumber from "./irrational-number";
+import NeovimIsntActuallyThatScary from "./neovim-isnt-actually-that-scary";
 
 export async function generateStaticParams() {
   const blogs = getAllPublishedBlogs();
@@ -23,6 +24,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const BlogContent = {
     "symmetries": Symmetries,
     "irrational-number": IrrationalNumber,
+    "neovim-isnt-actually-that-scary": NeovimIsntActuallyThatScary,
   }[slug];
 
   if (!BlogContent) {
