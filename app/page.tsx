@@ -105,7 +105,6 @@ export default function Home() {
 
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Abstract mathematics</li>
-              <li>Distributed systems</li>
               <li>Natural language processing</li>
               <li>Applied AI</li>
             </ul>
@@ -184,7 +183,18 @@ export default function Home() {
               </a>{" "}
               (UofTHacks 11 winner).
             </p>
-
+<p>
+              I also occasionally write about whatever currently has my attention (whether that&apos;s a new technical rabbit hole or just things I find generally interesting). You can check out my{" "}
+              <a
+                href="https://www.alvinayang.com/blogs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-70 transition-opacity"
+              >
+                blog here
+              </a>
+              .
+            </p>
             <p>
               I replaced my previous website after realizing I was
               disproportionately focused on layouts and animations rather than
