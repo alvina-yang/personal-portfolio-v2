@@ -24,9 +24,9 @@ export const blogs: Blog[] = [
   },
   {
     slug: 'irrational-number',
-    title: 'The most irrational number in the universe',
+    title: 'The Most Irrational Number in the Universe',
     description: 'How nature solves the packing problem and what that reveals about the golden ratio.',
-    date: '2026-02-12',
+    date: '2026-03-14',
     published: true,
   },
 ];
